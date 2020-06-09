@@ -21,8 +21,7 @@ function getCities(event) {
   inputState.value = event.target.options[indexOfSelectedState].text;
   const ufValue = event.target.value
 
-  const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufValue}/microrregioes
-  `
+  const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufValue}/microrregioes`
   fetch(url).then(res => res.json()).then(city => {
     for(cities of city){
       citySelect.innerHTML += `<option value="${cities.id}">${cities.nome}</option>`
